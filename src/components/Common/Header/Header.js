@@ -24,7 +24,7 @@ const Header = () => {
       <div className={`menu-icon ${menuVisible ? 'open' : ''}`}></div>
     </div>
         <div className="gradient"></div>
-        <div className="links ${menuVisible ? 'visible' : ''}`}">
+        <div className={`links ${menuVisible ? 'visible' : ''}`}>
               <NavLink to='/' onClick={handleLinkClick}>Signup</NavLink>
               <NavLink to='/podcast'>Podcasts</NavLink>
               <NavLink to='/start-a-podcast'>Start A Podcast</NavLink>

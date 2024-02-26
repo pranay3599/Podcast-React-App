@@ -8,12 +8,15 @@ import Loader from '../components/Common/Loader/Loader';
 import PodcastCard from '../components/Podcasts/PodcastCard';
 import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
+
 import './Style.css';
+import { useNavigate } from 'react-router-dom';
 
 function Profile() {
     const user = useSelector((state) => state.user.user);
     const [userPodcasts, setUserPodcasts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate();
     useEffect(() => {
         const fetchUserPodcasts = async () => {
             if (user!=null) {
@@ -39,6 +42,7 @@ function Profile() {
     const handleLogout = () => {
         signOut(auth)
             .then(() => {
+                navigate("/");
                 toast.success("Sign-out successful.");
             })
             .catch((error) => {

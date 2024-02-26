@@ -35,6 +35,7 @@ function LoginForm() {
             name: userData.name,
             email: user.email,
             uid: user.uid,
+            profileImageUrl:userData.profileImageUrl,
           })
         );
         toast.success("Login Successful!");
